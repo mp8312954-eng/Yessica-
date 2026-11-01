@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Yessica 💜</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(
+    160deg,
+    #180d2d,
+    #49316f,
+    #8061a8,
+    #b69aca
+  );
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 45px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #f2dcff;
+  font-size: 37px;
+  text-shadow: 0 0 18px #e4baff;
+}
+
+.subtitle {
+  color: #eee0ff;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  padding: 30px 23px;
+  margin-top: 25px;
+  border-radius: 25px;
+  background: #ffffff20;
+  border: 1px solid #eedaff88;
+  box-shadow: 0 0 35px #d7aaff55;
+  backdrop-filter: blur(12px);
+}
+
+.card h2 {
+  color: #f1d9ff;
+}
+
+.card p {
+  line-height: 1.9;
+  color: #fff5ff;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 14px 25px;
+  border: 1px solid #f1d9ff;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#d7b5f4,#a77bd2);
+  color: #38204d;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 18px #e6c6ff77;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+#letter {
+  display: none;
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 18px;
+  background: #eee0f7;
+  color: #49305f;
+  animation: appear 1s ease;
+}
+
+#letter h2 {
+  color: #754c99;
+}
+
+#letter p {
+  color: #503965;
+  line-height: 1.9;
+}
+
+.footer {
+  margin-top: 30px;
+  color: #f0ddff;
+  font-size: 14px;
+}
+
+.flower {
+  position: fixed;
+  top: -40px;
+  pointer-events: none;
+  animation: falling linear infinite;
+  z-index: -1;
+}
+
+@keyframes falling {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>♡ Para Yessica ♡</h1>
+
+  <p class="subtitle">
+    Un pequeño detalle hecho con mucho cariño...
+  </p>
+
+  <div class="card">
+
+    <h2>Una sorpresa para ti 💜</h2>
+
+    <p>
+      A veces no hacen falta grandes regalos,
+      solamente unas palabras sinceras
+      para recordarle a alguien lo especial que es.
+    </p>
+
+    <button onclick="openLetter()">
+      Abrir mi cartita ♡
+    </button>
+
+    <div id="letter">
+
+      <h2>Querida Yessica:</h2>
+
+      <p>
+        Quiero dedicarte estas pequeñas palabras
+        para recordarte algo muy bonito:
+        te quiero muchísimo.
+      </p>
+
+      <p>
+        Quizás no siempre encuentre la manera
+        perfecta de demostrarte cuánto te aprecio,
+        pero quiero que sepas que eres alguien
+        muy especial para mí.
+      </p>
+
+      <p>
+        Nunca dudes de lo valiosa que eres.
+        Mereces sonrisas, momentos bonitos
+        y personas que sepan apreciar tu presencia.
+      </p>
+
+      <p>
+        No necesitas una fecha especial
+        para recibir un detalle.
+        Hoy simplemente quería recordarte
+        lo mucho que te quiero.
+      </p>
+
+      <h2>Con mucho cariño ♡</h2>
+
+      <p>Este pequeño universo lila es para ti.</p>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    Hecho con cariño, especialmente para Yessica.
+    <br>♡ ✨ ♡
+  </div>
+
+</div>
+
+<script>
+function openLetter() {
+  const letter = document.getElementById("letter");
+  letter.style.display = "block";
+}
+
+const decorations = ["🌸","💜","✨","🪻","✦"];
+
+for (let i = 0; i < 35; i++) {
+  const flower = document.createElement("div");
+
+  flower.className = "flower";
+  flower.textContent =
+    decorations[Math.floor(Math.random() * decorations.length)];
+
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration =
+    (6 + Math.random() * 9) + "s";
+
+  flower.style.animationDelay =
+    Math.random() * 10 + "s";
+
+  flower.style.fontSize =
+    (14 + Math.random() * 17) + "px";
+
+  document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
